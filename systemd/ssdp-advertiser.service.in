@@ -1,0 +1,11 @@
+[Unit]
+Description=Advertise an SSDP service.
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=notify
+ExecStart=@prefix@/bin/ssdp-advertiser
+ExecReload=/bin/kill -HUP $MAINPID
+StandardOutput=journal
+StandardError=journal
