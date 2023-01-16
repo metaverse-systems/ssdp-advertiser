@@ -56,3 +56,4 @@ src/ssdp-advertiser
 config.h.in~
 configure.ac~
 configure~
+systemd/ssdp-advertiser.service
