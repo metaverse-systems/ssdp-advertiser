@@ -5,7 +5,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt-get -y install build-essential libgssdp-1.2-dev libpugixml-dev libcurl4-openssl-dev libsystemd-dev
+      - run: sudo apt-get -y install build-essential libpugixml-dev libcurl4-openssl-dev libsystemd-dev meson valac
+      - run: cd /home/runner/work
+      - run: wget https://github.com/GNOME/gssdp/archive/refs/tags/gssdp-1.6.2.tar.gz
+      - run: tar xvf gssdp-1.6.2.tar.gz
+      - run: cd /home/runner/work/gssdp-1.6.2
+      - run: mkdir build && cd build
+      - run: meson ..
+      - run: sudo meson install
       - run: cd /home/runner/work/ssdp-advertiser/ssdp-advertiser
       - run: ./autogen.sh
       - run: ./configure --prefix=/usr
