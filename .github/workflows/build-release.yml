@@ -6,6 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: sudo apt-get -y install build-essential
-      - run: cd ssdp-advertiser
+      - run: cd /home/runner/work/ssdp-advertiser/ssdp-advertiser
       - run: ./configure --prefix=/usr
       - run: make
