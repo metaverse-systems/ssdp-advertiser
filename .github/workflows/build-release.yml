@@ -9,8 +9,8 @@ jobs:
       - run: cd /home/runner/work
       - run: wget https://github.com/GNOME/gssdp/archive/refs/tags/gssdp-1.6.2.tar.gz -O /home/runner/work/gssdp-1.6.2.tar.gz
       - run: cd /home/runner/work && tar xvf gssdp-1.6.2.tar.gz
-      - run: cd /home/runner/work/gssdp-gssdp-1.6.2
-      - run: mkdir build && cd build && meson .. && sudo meson install
+      - run: cd /home/runner/work/gssdp-gssdp-1.6.2 && mkdir build
+      - run: cd /home/runner/work/gssdp-gssdp-1.6.2/build && meson .. && sudo meson install
       - run: cd /home/runner/work/ssdp-advertiser/ssdp-advertiser
       - run: ./autogen.sh
       - run: ./configure --prefix=/usr
