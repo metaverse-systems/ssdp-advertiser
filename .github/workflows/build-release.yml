@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - run: sudo apt-get -y install build-essential libgssdp-1.6-dev
+      - run: sudo apt-get -y install build-essential libgssdp-1.2-dev libpugixml-dev
       - run: cd /home/runner/work/ssdp-advertiser/ssdp-advertiser
       - run: ./autogen.sh
       - run: ./configure --prefix=/usr
