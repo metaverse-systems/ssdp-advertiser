@@ -1,6 +1,6 @@
 #!/bin/bash
 
-aclocal -I./m4 \
+aclocal \
 && autoheader \
 && automake --add-missing -c \
 && autoconf
