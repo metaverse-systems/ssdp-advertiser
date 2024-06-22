@@ -9,3 +9,6 @@ ExecStart=@prefix@/bin/ssdp-advertiser
 ExecReload=/bin/kill -HUP $MAINPID
 StandardOutput=journal
 StandardError=journal
+
+[Install]
+WantedBy=multi-user.target
