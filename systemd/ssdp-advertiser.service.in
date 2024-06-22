@@ -1,7 +1,8 @@
 [Unit]
 Description=Advertise an SSDP service.
-After=network-online.target
+After=network-online.target apache2.service
 Wants=network-online.target
+Requires=apache2.service
 
 [Service]
 Type=notify
@@ -9,6 +10,7 @@ ExecStart=@prefix@/bin/ssdp-advertiser
 ExecReload=/bin/kill -HUP $MAINPID
 StandardOutput=journal
 StandardError=journal
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
