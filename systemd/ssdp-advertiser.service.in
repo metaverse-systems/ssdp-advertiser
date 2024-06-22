@@ -11,6 +11,7 @@ ExecReload=/bin/kill -HUP $MAINPID
 StandardOutput=journal
 StandardError=journal
 Restart=on-failure
+RestartSec=5
 
 [Install]
 WantedBy=multi-user.target
